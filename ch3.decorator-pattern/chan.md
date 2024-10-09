@@ -1,37 +1,37 @@
 # Decorator-Pattern
 
-## summary
 
-Decorator-Pattern is the pattern that the decorator class is inherited by target interface(or abstract class) to serve as a target class and composite it to add additional functionally in specific functions 
+## Summary
 
-this pattern helps adding additional functionality without modifying an existing object as decorating this
+Decorator-Pattern is the pattern where the decorator class inherits from the target interface(or abstract class) and holds a reference to an instance of the target interface. This composition allows the decorator to add additional functionality to specific methods without altering the existing object’s structure.
 
-### example: Cafe
+### Example: Cafe
 
-there are a few coffee type class inherited by beverage, abstract class.
-let's imagine that you want to add more options like whip, milk, and soy in a coffee 
+There are a few coffee type class inherited by the beverage, abstract class.
+Let's imagine that you want to add more options like whip, milk, and soy in a coffee 
 
-1. let's create new classes (latte with whip, latte with soy)
-	- there would be too many classes
-2. let's add the options(toppings) in beverage abstract class
-	- it makes modification for existing code and adding useless fields and functions for some of sub-class  
+**Without Decorator Pattern:**
 
-so, solution: decorator pattern
-- Just create the decorator classes(milk, soy, whip classes) and apply it to them
-- we can extend functionality more flexible
-	- when you have to add new functionality, it helps extension without modification
+1. You might create new classes for each combination, such as LatteWithWhip and LatteWithSoy.
+	- This approach leads to an explosion of classes as more options are added.
+2. Modifying the Beverage abstract class to include all possible options can result in unnecessary fields and methods for some subclasses.
 
+**With Decorator Pattern:**
+
+- Just create the decorator classes for each options (e.g., milk, soy, whip classes) and apply it to the base Beverage objects as needed
+- this approach allows for more flexible and scalable functionality extension without modifying existing code.
 
 ### notes of caution
 
-- complex architecture
+- complex architecture, making the system harder to understand
 	- we have many other options
-- it is bad to dig into decorators and do something like parsing or reading something
+- when we use the decorator pattern, it is hard to dig into decorators and do something like parsing or reading data
 
 ## difference with strategy pattern
 
-the **strategy pattern** allow you to change the implementation of something used at runtime
-the **decorator pattern** allow you to add to an existing functionality with additional functionality at runtime
+The **strategy pattern** allow you to change the implementation of something used at runtime.
+
+The **decorator pattern** allow you to add to an existing functionality with additional functionality at runtime
 
 https://stackoverflow.com/questions/26422884/strategy-pattern-v-s-decorator-pattern
 
