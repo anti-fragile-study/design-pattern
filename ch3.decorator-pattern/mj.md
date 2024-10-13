@@ -51,7 +51,6 @@ public abstract class Beverage {
 ```java
 class Espresso extends Beverage {
 
-    @Override
     public double cost() {
         return 5.0 + super.cost();
     }
