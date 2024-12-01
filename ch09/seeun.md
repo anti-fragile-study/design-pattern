@@ -31,3 +31,24 @@ public interface Iterable<T> {
 - Iterator 인터페이스와 `forEach()` 메서드를 통해 향상된 for 순환문을 사용할 수 있다.
   - `hasNext()` 등 Iterator 인터페이스의 메서드를 직접 호출하지 않고 반복할 수 있다.
 
+<br/>
+
+## Composite Pattern
+
+> 객체들을 트리 구조로 구성하여 부분-전체 계층을 표현하는 구조적 디자인 패턴
+
+```
+1. Component (컴포넌트)
+   - 모든 구체적인 클래스에 대한 공통 인터페이스 정의
+   - 기본 동작 구현 및 공통 메서드 선언
+
+2. Leaf (잎)
+   - Component의 기본 요소
+   - 자식 요소를 가지지 않는 개별 객체
+
+3. Composite (복합체)
+   - Component를 상속받아 자식 요소들을 관리
+   - 자식 요소 추가, 제거, 순회 기능 구현
+```
+
+- 복합 객체(Composite)와 개별 객체(Leaf)를 대상으로 똑같은 작업을 적용할 수 있다.
